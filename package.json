@@ -1,0 +1,28 @@
+{
+    "name": "fm-social-proof-section",
+    "version": "1.0.0",
+    "description": "This is a solution of one the Frontend Mentor challenges - https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA, built with Vanilla CSS",
+    "source": "index.html",
+    "scripts": {
+        "start": "parcel",
+        "build": "parcel build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/radektomasek/fm-social-proof-section.git"
+    },
+    "keywords": [
+        "Parcel",
+        "HTML",
+        "CSS"
+    ],
+    "author": "Radek Tomasek (radek.tomasek@gmail.com)",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/radektomasek/fm-social-proof-section/issues"
+    },
+    "homepage": "https://github.com/radektomasek/fm-social-proof-section#readme",
+    "devDependencies": {
+        "parcel": "^2.9.2"
+    }
+}
