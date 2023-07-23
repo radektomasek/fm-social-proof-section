@@ -1,3 +1,25 @@
+:root {
+    --dark-magenta-color: hsl(300, 43%, 22%);
+    --soft-pink-color: hsl(333, 80%, 67%);
+    --dark-grayish-magenta-color: hsl(303, 10%, 53%);
+    --light-grayish-magenta-color: hsl(300, 24%, 96%);
+    --white-color: hsl(0, 0%, 100%);
+
+    --main-heading-size: 2.5rem;
+    --main-heading-line: 0.8;
+    --main-heading-letter: -0.08931rem;
+
+    --card-heading-size: 1.0625rem;
+
+    --default-p-size: 1.1875rem;
+    --default-p-line: 1.31;
+    --default-p-letter: -0.03956rem;
+
+    --quot-p-size: 1.0625rem;
+    --quot-p-line: 1.29;
+    --quot-p-letter: -0.019rem;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -16,4 +38,60 @@ a,
 p {
     margin: 0;
     padding: 0;   
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: inherit;
+    font-weight: 700;  
+}
+
+h2, h3, h4 {
+    font-size: var(--card-heading-size);
+}
+
+h4 {
+    font-family: inherit;
+    font-weight: 400;  
+}
+
+p {
+    font-family: inherit;
+    font-weight: 500;
+}
+
+h1 {
+    color: var(--dark-magenta-color);
+    font-size: var(--main-heading-size);
+    line-height: var(--main-heading-line);
+    letter-spacing: var(--main-heading-letter);
+}
+
+h2 {
+    color: var(--dark-magenta-color);
+}
+
+h3 {
+    color: var(--white-color);
+}
+
+h4 {
+    color: var(--soft-pink-color);
+}
+
+p {
+    color: var(--dark-grayish-magenta-color);
+    font-size: var(--default-p-size);
+    line-height: var(--default-p-line);
+    letter-spacing: var(--default-p-letter);
+}
+
+blockquote p {
+    color: var(--white-color);
+    font-size: var(--quot-p-size);
+    line-height: var(--quot-p-line);
+    letter-spacing: var(--quot-p-letter);
 }
