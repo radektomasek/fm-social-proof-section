@@ -19,9 +19,18 @@
     --quot-p-line: 1.29;
     --quot-p-letter: -0.019rem;
 
+    --hero-section-width: 20rem;
+
     --review-card-width: 20.4375rem;
 
     --testemonial-card-width: 20.4375rem;
+    --testemonial-card-height: 15.5rem; 
+
+    --testemonial-card-gap: 1.4375rem;
+
+    --testemonial-item-gap: 1rem; 
+
+    --card-border-radius: 0.5rem;
 }
 
 html {
@@ -111,21 +120,34 @@ blockquote p {
 
 .grid {
     display: grid;
+    grid-template-rows: 18.75rem 22.125rem 54.6875rem;
+    grid-template-columns: 1fr;
+    justify-items: center;
 }
 
 /* Hero section */
 .hero {
     display: flex;
     flex-flow: column nowrap;
-    width: 20rem;
-    margin: 5.125rem auto 2.4375rem auto;
     gap: 1.0625rem;
     text-align: center;
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    align-self: flex-end;
+    width: var(--hero-section-width);
 }
 
 /* Review section */
 .review {
-    margin: 0 auto;
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+    align-self: center;
+}
+
+.review__items {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
 }
 
 .review__item {
@@ -135,15 +157,18 @@ blockquote p {
     width: var(--review-card-width);
     justify-content: center;
     align-items: center;
-    margin: 0 0 1rem 0;
-    border-radius: 0.5rem;
+    border-radius: var(--card-border-radius);
     gap: 0.952rem;
-    padding: 1rem;
+    padding: 1rem 3.4375rem 0.9375rem 3.4375rem;
 }
 
 /* Testemonial section */
 .testemonial {
-    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    grid-column: 1 / 1;
+    grid-row: 3 / 3;
+    gap: var(--testemonial-item-gap);
 }
 
 .card {
@@ -151,14 +176,15 @@ blockquote p {
     flex-flow: column nowrap;
     background-color: var(--dark-magenta-color);
     width: var(--testemonial-card-width);
-    gap: 2rem;
-    padding: 2rem;
-    margin-bottom: 1rem;
+    height: var(--testemonial-card-height);
+    border-radius: var(--card-border-radius);
+    gap: var(--testemonial-card-gap);
+    padding: 2.5rem 2rem 2.1875rem 2rem;
 }
 
 .profile__illustration img {
     width: 2.5rem;
-    height: auto;
+    border-radius: 50%;
 }
 
 .card__profile {
@@ -166,5 +192,106 @@ blockquote p {
     flex-flow: row nowrap;
     height: 2.5rem;
     align-items: center;
-    gap: 1.2rem;
+    gap: var(--testemonial-card-gap);
+}
+
+.profile__name {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+/* Desktop breakpoint */
+@media screen and (min-width: 90em) { 
+    :root {
+        --hero-section-width: 27.8125rem;
+
+        --main-heading-size: 3.5rem;
+        --main-heading-line: 0.857;
+        --main-heading-letter: -0.125rem;
+
+        --review-card-width: var(--hero-section-width);
+
+        --testemonial-card-width: 21.875rem;
+        --testemonial-card-height: 14.625rem;
+        --testemonial-item-gap: 1.875rem; 
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        max-width: 69.375rem;
+        margin: 0 auto;
+        gap: 4rem;
+    }
+
+    /* Hero section */
+    .hero {
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+        text-align: left;
+        margin: 0;
+        align-self: flex-start;
+        justify-self: start;
+    }
+
+    /* Review section */
+    .review {
+        grid-column: 2 / 2;
+        grid-row: 1 / 1;
+    }
+
+    .review__items {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 33.75rem;
+    }
+
+    .review__item { 
+        flex-flow: row-reverse nowrap;
+        justify-content: start;
+        padding: 1.256rem 4.9375rem 1.25rem 2rem;
+    }
+
+    .review__item:nth-child(1) {
+        align-self: start;
+    }
+
+    .review__item:nth-child(2) {
+        align-self: center;
+    }
+
+    .review__item:nth-child(3) {
+        align-self: end;
+    }
+
+    /* Testemonial section */
+    .testemonial {
+        flex-flow: row nowrap;
+        grid-column: 1 / span 2;
+        grid-row: 2 / 2;
+        height: 16.625rem;
+    }
+
+    .testemonial__card:nth-child(1) {
+        align-self: start;
+    }
+
+    .testemonial__card:nth-child(2) {
+        align-self: center;
+    }
+
+    .testemonial__card:nth-child(3) {
+        align-self: end;
+    }
+
 }

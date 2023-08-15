@@ -24,5 +24,10 @@
     "homepage": "https://github.com/radektomasek/fm-social-proof-section#readme",
     "devDependencies": {
         "parcel": "^2.9.2"
+    },
+    "@parcel/transformer-css": {
+        "drafts": {
+            "nesting": true
+        }
     }
 }
