@@ -20,11 +20,16 @@
     --quot-p-letter: -0.019rem;
 
     --hero-section-width: 20rem;
+    --hero-section-height: 13.6875rem;
+
+    --review-section-height: 16.625rem;
 
     --review-card-width: 20.4375rem;
 
     --testemonial-card-width: 20.4375rem;
     --testemonial-card-height: 15.5rem; 
+
+    --review-item-gap: 0.952rem;
 
     --testemonial-card-gap: 1.4375rem;
 
@@ -64,6 +69,8 @@ ul {
 
 body {
     font-family: 'League Spartan', sans-serif;
+    background: no-repeat top/contain url("../../assets/bg-pattern-top-mobile.svg"),
+                no-repeat bottom/contain url("../../assets/bg-pattern-bottom-mobile.svg");
 }
 
 h1, h2, h3 {
@@ -118,6 +125,24 @@ blockquote p {
     letter-spacing: var(--quot-p-letter);
 }
 
+.attribution {
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.attribution p {
+    font-size: 1rem;
+}
+
+.attribution a {
+    color: var(--dark-magenta-color);
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+}
+
 .grid {
     display: grid;
     grid-template-rows: 18.75rem 22.125rem 54.6875rem;
@@ -129,12 +154,13 @@ blockquote p {
 .hero {
     display: flex;
     flex-flow: column nowrap;
-    gap: 1.0625rem;
     text-align: center;
     grid-column: 1 / 1;
     grid-row: 1 / 1;
+    justify-content: space-between;
     align-self: flex-end;
     width: var(--hero-section-width);
+    height: var(--hero-section-height);    
 }
 
 /* Review section */
@@ -147,7 +173,8 @@ blockquote p {
 .review__items {
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem;
+    justify-content: space-between;
+    height: var(--review-section-height);
 }
 
 .review__item {
@@ -158,8 +185,15 @@ blockquote p {
     justify-content: center;
     align-items: center;
     border-radius: var(--card-border-radius);
-    gap: 0.952rem;
+    gap: var(--review-item-gap);
     padding: 1rem 3.4375rem 0.9375rem 3.4375rem;
+}
+
+.review__score {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 7.284rem;
 }
 
 /* Testemonial section */
@@ -178,7 +212,7 @@ blockquote p {
     width: var(--testemonial-card-width);
     height: var(--testemonial-card-height);
     border-radius: var(--card-border-radius);
-    gap: var(--testemonial-card-gap);
+    justify-content: space-between;
     padding: 2.5rem 2rem 2.1875rem 2rem;
 }
 
@@ -206,10 +240,15 @@ blockquote p {
 @media screen and (min-width: 90em) { 
     :root {
         --hero-section-width: 27.8125rem;
+        --hero-section-height: 100%;
 
         --main-heading-size: 3.5rem;
         --main-heading-line: 0.857;
         --main-heading-letter: -0.125rem;
+
+        --review-item-gap: 2.028rem;
+
+        --review-section-height: 12.5rem; 
 
         --review-card-width: var(--hero-section-width);
 
@@ -223,15 +262,17 @@ blockquote p {
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
+        background: left 0% top 0% / 46% url("../../assets/bg-pattern-top-desktop.svg") no-repeat,
+                    right 0% bottom 0% / 76% url("../../assets/bg-pattern-bottom-desktop.svg") no-repeat;
     }
 
     .grid {
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 15.3125rem 1fr;
         grid-template-columns: 1fr 1fr;
         max-width: 69.375rem;
         margin: 0 auto;
-        gap: 4rem;
+        gap: 4.4375rem;
     }
 
     /* Hero section */
@@ -259,7 +300,7 @@ blockquote p {
     .review__item { 
         flex-flow: row-reverse nowrap;
         justify-content: start;
-        padding: 1.256rem 4.9375rem 1.25rem 2rem;
+        padding: 1.256rem 0 1.25rem 2rem;
     }
 
     .review__item:nth-child(1) {
@@ -292,6 +333,18 @@ blockquote p {
 
     .testemonial__card:nth-child(3) {
         align-self: end;
+    }
+
+    .attribution {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .attribution p {
+        font-size: 1.2rem;
     }
 
 }
