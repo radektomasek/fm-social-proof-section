@@ -8,7 +8,7 @@ This repository contains an implementation of one of the Frontend Mentor Challen
 
 [This challenge](https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA) was the eleventh one I picked from the [Frontend Mentor](https://www.frontendmentor.io).
 
-The process of creating the solution was quite straighforward. When I was picking up the challenge, I liked the most the cards/rating components which hadn't been aligned in straight lines. I imagined the solution quite quickly and I was glad it was working well when I was actually implementing it.
+The process of creating the solution was quite straighforward. When picking up the challenge, I liked most of the cards/rating components that hadn't been aligned in straight lines. I imagined the solution relatively quickly and was glad it worked well when implemented.
 
 But as usual, let's breakup the solution in the next few sections.
 
